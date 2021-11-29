@@ -1,0 +1,9 @@
+def encrypt(msg,gap):
+if(msg.islower()):
+return chr((ord(msg) + gap - 97)%26 + 97)
+if(msg.isupper()):
+return chr((ord(msg) + gap - 65)%26 + 65)
+msg=input("Enter the word: ")
+gap=int(input("Enter number of place to shift: "))
+answer = list(map(encrypt,msg,[gap]*len(msg)))
+print(answer)
